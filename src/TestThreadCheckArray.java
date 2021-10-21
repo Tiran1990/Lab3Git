@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner;//gfrbg
 
 public class TestThreadCheckArray {
 	public static void main(String[] args) {
@@ -8,24 +8,24 @@ public class TestThreadCheckArray {
 			int num  = input.nextInt();
 			int [] array = new int[num];
 			System.out.println("Enter numbers for array");
-			
-			for (int index = 0; index < num; index++) 
+
+			for (int index = 0; index < num; index++)
 				array[index] = input.nextInt();
-			
+
 			System.out.println("Enter number");
 			num = input.nextInt();
-			
+
 			SharedData sd = new SharedData(array, num);
-			
+
 			thread1 = new Thread(new ThreadCheckArray(sd), "thread1");
 			thread2 = new Thread(new ThreadCheckArray(sd), "thread2");
 			thread1.start();
 			thread2.start();
-			try 
+			try
 			{
 				thread1.join();
 				thread2.join();
-			} 
+			}
 			catch (InterruptedException e)
 			{
 				e.printStackTrace();
@@ -63,7 +63,7 @@ public class TestThreadCheckArray {
 				if (index)
 					System.out.print("1    ");
 				else
-					System.out.print("0    ");	
+					System.out.print("0    ");
 			}
 		}
 	}
