@@ -1,4 +1,4 @@
-public class SharedData // hey
+public class SharedData //Good evning
 {
 	private int [] array;
 	private boolean [] winArray;
